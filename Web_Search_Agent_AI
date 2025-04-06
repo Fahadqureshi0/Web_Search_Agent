@@ -1,0 +1,31 @@
+from agno.agent import Agent
+from agno.models.groq import Groq
+from agno.tools.duckduckgo import DuckDuckGoTools
+
+import os
+# Set the Groq API Key (only for temporary testing)
+os.environ["GROQ_API_KEY"] = "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"
+
+# Initialize the agent with an LLM via Groq and DuckDuckGoTools
+agent = Agent(
+    model=Groq(id="llama-3.3-70b-versatile"),
+    description="You are an enthusiastic news reporter with a flair for storytelling!",
+    tools=[DuckDuckGoTools()],      # Add DuckDuckGo tool to search the web
+    show_tool_calls=True,           # Shows tool calls in the response, set to False to hide
+    markdown=True                   # Format responses in markdown
+)
+
+# Prompt the agent to fetch a breaking news story from New York
+agent.print_response("What are the latest trends in AI development for 2025?", stream=True)
+
+
+
+
+
+
+
+
+
+
+
+
