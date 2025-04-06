@@ -4,7 +4,7 @@ from agno.tools.duckduckgo import DuckDuckGoTools
 
 import os
 # Set the Groq API Key (only for temporary testing)
-os.environ["GROQ_API_KEY"] = "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"
+os.environ["GROQ_API_KEY"] = "___"
 
 # Initialize the agent with an LLM via Groq and DuckDuckGoTools
 agent = Agent(
